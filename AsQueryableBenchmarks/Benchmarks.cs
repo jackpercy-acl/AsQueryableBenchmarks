@@ -57,13 +57,13 @@ namespace AsQueryableBenchmarks
         [Benchmark]
         public void ExtensionMethodQueryable()
         {
-            var table = _tables.WithFieldQ(_fieldId);
+            var table = _tables.WithFieldQueryable(_fieldId);
         }
         
         [Benchmark]
         public void ExtensionMethodEnumerable()
         {
-            var table = _tables.WithFieldE(_fieldId);
+            var table = _tables.WithFieldEnumerable(_fieldId);
         }
     }
 }

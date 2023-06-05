@@ -9,7 +9,7 @@ namespace AsQueryableBenchmarks
         public static IQueryable<Field> WithIdQ(this IEnumerable<Field> source, Guid? id) =>
             source.AsQueryable().Where(x => x.Id == id);
         
-        public static Table WithFieldQ(this IEnumerable<Table> tables, Guid fieldId)
+        public static Table WithFieldQueryable(this IEnumerable<Table> tables, Guid fieldId)
         {
             return tables.SingleOrDefault(table => table.Fields.WithIdQ(fieldId).Any());
         }
@@ -17,7 +17,7 @@ namespace AsQueryableBenchmarks
         public static IEnumerable<Field> WithIdE(this IEnumerable<Field> source, Guid? id) =>
             source.Where(x => x.Id == id);
         
-        public static Table WithFieldE(this IEnumerable<Table> tables, Guid fieldId)
+        public static Table WithFieldEnumerable(this IEnumerable<Table> tables, Guid fieldId)
         {
             return tables.SingleOrDefault(table => table.Fields.WithIdE(fieldId).Any());
         }
