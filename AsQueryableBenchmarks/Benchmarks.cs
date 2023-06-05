@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using BenchmarkDotNet.Order;
 
 namespace AsQueryableBenchmarks
 {
-    [ShortRunJob(RuntimeMoniker.Net60)]
-    [ShortRunJob(RuntimeMoniker.NetCoreApp31)]
-    [ShortRunJob(RuntimeMoniker.Net48)]
-    [ShortRunJob(RuntimeMoniker.Net47)]
-    [Orderer(SummaryOrderPolicy.FastestToSlowest)]
+    [SimpleJob(RuntimeMoniker.Net60)]
+    [SimpleJob(RuntimeMoniker.NetCoreApp31)]
+    [SimpleJob(RuntimeMoniker.Net48)]
     public class Benchmarks
     {
         private ICollection<Table> _tables;
